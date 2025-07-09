@@ -31,7 +31,7 @@ jobs:
         
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
-        run: composer install
+        run: composer update
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
